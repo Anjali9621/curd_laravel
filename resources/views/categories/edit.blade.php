@@ -1,8 +1,4 @@
-@extends('layouts.app')
-
-@section('main')
-
-<!-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Categories</title>
@@ -12,14 +8,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-</head> -->
+</head> 
 <body>
 
 <div class="container pt-5">
   <h2>Edit Category</h2>
   <div class="row">
       <div class="col-sm-4">   
-        <form method="post" action="/category-update/{{$category->id}}" > 
+        <form method="post" action="/category.update/{{$category->id}}" > 
           
           @csrf
           @method('put')
@@ -31,6 +27,5 @@
 </div>
 </div>
 
-@endsection
-<!-- </body>
-</html> -->
+ </body>
+</html>

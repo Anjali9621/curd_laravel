@@ -1,10 +1,4 @@
-@extends('layouts.app')
-
-@section('main')
-
-
-
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Categories</title>
@@ -13,53 +7,52 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-</head>
-<body> -->
-
-<div class="container">
-  <h2>Categories<a class="btn btn-info" href="/categroy-create">New Category</a></h2>
+  <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+</head> 
+<body>
+ <div class="container">
+  <h2>Categories<a class="btn btn-info" href="/categroy.create">New Category</a></h2>
 
   @if (session()->has('success'))
           <div class="alert alert-info" role="alert">
             <strong>{{session()->get('success')}}</strong>
           </div> 
           @endif 
+         
   <table class="table table-striped">
     <thead>
+      <td>
       <tr>
         <th>Sr.No.</th>
         <th>Title</th>
         <th>Action</th>
       </tr>
+</td>
     </thead>
     <tbody>
       @foreach($categories as $category)
     <tr>
         <td>{{$loop ->index+1}}</td>
         <td>{{$category->title}}</td>
+
         <td>
-
-        <a href="/category-edit/{{ $category->id}}" class="btn-sm btn-info">Edit</a>
+        <a href="/category.edit/{{ $category->id}}" class="btn-sm btn-info ">Edit</a>
        <br/>
-
-       <form  method="post" action="/category-delete/{{ $category->id}}">
+      
+       <form  method="post" action="/category.delete/{{ $category->id}}">
         @csrf
         @method('delete')
-<button type="submit" class="btn btn-sm btn-danger">Delete</button>
+     <button type="submit" class="btn btn-sm btn-danger ">Delete</button>
 
        </form>
         </td>
-      </tr>
+  </tr>
     @endforeach
+
     </tbody>
   </table>
   {{$categories->links()}}
-</div>
+  </div>
+  </body>
+</html>
 
-
-<@endsection>
-
-
-<!-- </body>
-</html> -->

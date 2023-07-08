@@ -16,13 +16,13 @@ use App\Http\controllers\categoryController;
 
 Route::get('/',[categoryController::class,'index']);
 
-Route::get('/categroy-create',[categoryController::class,'create']);
+Route::get('/categroy.create',[categoryController::class,'create']);
 
-Route::post('/category-store',[categoryController::class,'store']);
+Route::post('/category.store',[categoryController::class,'store']);
 
-Route::get('/category-edit/{id}',[categoryController::class,'edit']);
+Route::get('/category.edit/{id}',[categoryController::class,'edit']);
 
-Route::put('/category-update/{id}',[categoryController::class,'update']);
+Route::put('/category.update/{id}',[categoryController::class,'update']);
 
-Route::delete('/category-delete/{id}',[categoryController::class,'destroy']);
+Route::delete('/category.delete/{id}',[categoryController::class,'destroy']);
 
